@@ -9,22 +9,40 @@
 
 <div id="job"></div>
 
+<h2>Step 1: Review Agreement</h2>
+
 <p>
-<a id="pdflink" target="_blank">
-Review Agreement
-</a>
+    <a id="pdflink" target="_blank">
+        Open Agreement
+    </a>
 </p>
+
+<h2>Step 2: Complete & Sign</h2>
+
+<iframe
+    id="jotform"
+    width="100%"
+    height="1000"
+    frameborder="0">
+</iframe>
 
 <script>
 const params = new URLSearchParams(window.location.search);
 
 const job = params.get("job");
 const pdf = params.get("pdf");
+const form = params.get("form");
 
 document.getElementById("job").innerHTML =
     "<h2>Job Number: " + job + "</h2>";
 
-document.getElementById("pdflink").href = pdf;
+if(pdf){
+    document.getElementById("pdflink").href = decodeURIComponent(pdf);
+}
+
+if(form){
+    document.getElementById("jotform").src = decodeURIComponent(form);
+}
 </script>
 
 </body>
