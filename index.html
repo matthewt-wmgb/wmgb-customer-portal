@@ -6,7 +6,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: auto;
             padding: 20px;
             background: #f5f5f5;
@@ -28,23 +28,29 @@
             padding: 14px 24px;
             border-radius: 6px;
             font-weight: bold;
+            margin-bottom: 15px;
         }
 
         .btn:hover {
             background: #00457a;
         }
 
-        iframe {
+        .pdf-viewer {
             width: 100%;
+            height: 900px;
+            border: 1px solid #ccc;
+        }
+
+        iframe.form-frame {
+            width: 100%;
+            height: 1400px;
             border: none;
-            min-height: 1200px;
         }
 
         h1 {
             color: #005a9c;
         }
     </style>
-
 </head>
 
 <body>
@@ -62,18 +68,21 @@
 
         <h2>Step 1: Review Agreement</h2>
 
-        <p>
-            Please review your agreement before completing the form below.
-        </p>
-
         <a
             class="btn"
             href="https://wmgb.sharepoint.com/:b:/g/IQCgYE4e3PFST7tgUdYKdHABAZa2RDGsuhLVoGSrduK9A1k?e=bIddSd"
             target="_blank">
 
-            Open Agreement
+            Open Agreement In New Tab
 
         </a>
+
+        <br><br>
+
+        <embed
+            class="pdf-viewer"
+            src="https://wmgb.sharepoint.com/:b:/g/IQCgYE4e3PFST7tgUdYKdHABAZa2RDGsuhLVoGSrduK9A1k?e=bIddSd"
+            type="application/pdf">
 
     </div>
 
@@ -82,10 +91,8 @@
         <h2>Step 2: Complete & Sign</h2>
 
         <iframe
-            src="https://form.jotform.com/261757411403149"
-            width="100%"
-            height="1200"
-            frameborder="0">
+            class="form-frame"
+            src="https://form.jotform.com/261757411403149">
         </iframe>
 
     </div>
