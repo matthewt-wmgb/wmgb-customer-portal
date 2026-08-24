@@ -2,48 +2,85 @@
 <html>
 <head>
     <title>WMGB Customer Portal</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+
+        .btn {
+            display: inline-block;
+            background: #005a9c;
+            color: white;
+            padding: 14px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #00457a;
+        }
+
+        iframe {
+            width: 100%;
+            border: none;
+            min-height: 1200px;
+        }
+
+        h1 {
+            color: #005a9c;
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>WMGB Customer Portal</h1>
+    <h1>WMGB Home Improvement</h1>
 
-<div id="job"></div>
+    <div class="card">
+        <h2>Customer Information</h2>
 
-<h2>Step 1: Review Agreement</h2>
+        <p><strong>Customer:</strong> Homer Simpson</p>
+        <p><strong>Job Number:</strong> 26-111</p>
+    </div>
 
-<p>
-    <a id="pdflink" target="_blank">
-        Open Agreement
-    </a>
-</p>
+    <div class="card">
 
-<h2>Step 2: Complete & Sign</h2>
+        <h2>Step 1: Review Agreement</h2>
 
-<iframe
-    id="jotform"
-    width="100%"
-    height="1000"
-    frameborder="0">
-</iframe>
+        <p>
+            Please review your agreement before completing the form below.
+        </p>
 
-<script>
-const params = new URLSearchParams(window.location.search);
+        <a
+            class="btn"
+            href="PUT_YOUR_SHAREPOINT_PDF_LINK_HERE"
+            target="_blank">
 
-const job = params.get("job");
-const pdf = params.get("pdf");
-const form = params.get("form");
+            Open Agreement
 
-document.getElementById("job").innerHTML =
-    "<h2>Job Number: " + job + "</h2>";
+        </a>
 
-if(pdf){
-    document.getElementById("pdflink").href = decodeURIComponent(pdf);
-}
+    </div>
 
-if(form){
-    document.getElementById("jotform").src = decodeURIComponent(form);
-}
-</script>
+    <div class="card">
+
+        <h2>Stepme>
+
+    </div>
 
 </body>
 </html>
